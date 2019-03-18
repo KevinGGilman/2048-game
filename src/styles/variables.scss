@@ -1,0 +1,146 @@
+$white-t2: hsla(0,0%,100%, 0.97);
+$white80: hsla(0,0%,100%, 0.8);
+$white70: hsla(0,0%,100%, 0.7);
+$white60: hsla(0,0%,100%, 0.6);
+$white40: hsla(0,0%,100%, 0.4);
+// gray
+$gray98: hsl(0,0%,98%);
+$gray95: hsl(0,0%,95%);
+$gray90: hsl(0,0%,90%);
+$gray85: hsl(0,0%,85%);
+$gray80: hsl(0,0%,80%);
+$gray70: hsl(0,0%,70%);
+$gray60: hsl(0,0%,60%);
+$gray50: hsl(0,0%,50%);
+$gray45: hsl(0,0%,45%);
+$gray30: hsl(0,0%,30%);
+$gray25: hsl(0,0%,27%);
+$gray20: hsl(0,0%,20%);
+$gray15: hsl(0,0%,15%);
+// transparent
+$gray-t30: hsla(0,0%,30%,0.97);
+$gray-t20: hsla(0,0%,20%,0.97);
+$gray-t15: hsla(0,0%,15%,0.97);
+$gray-t40: hsla(0,0%,40%,0.8);
+$gray-t20: hsla(0,0%,20%,0.97);
+$gray-t85: hsla(0,0%,95%,0.90);
+$gray-t98: hsla(0,0%,98%,0.90);
+$black-t4: hsla(0,0%,0%,0.4);
+// primary
+$primary:   hsl(40, 50%, 55%);
+$primary98: hsl(40, 50%, 98%);
+$primary95: hsl(40, 50%, 95%);
+$primary90: hsl(40, 50%, 90%);
+$primary85: hsl(40, 50%, 85%);
+$primary80: hsl(40, 50%, 80%);
+$primary80: hsl(40, 50%, 80%);
+$primary75: hsl(40, 50%, 75%);
+$primary70: hsl(40, 50%, 70%);
+$primary65: hsl(40, 50%, 65%);
+$primary60: hsl(40, 50%, 60%);
+$primary55: hsl(40, 50%, 55%);
+$primary45: hsl(40, 50%, 45%);
+$primary40: hsl(40, 50%, 40%);
+$primary35: hsl(40, 50%, 35%);
+$primary30: hsl(40, 50%, 30%);
+$primary25: hsl(40, 50%, 25%);
+$primary20: hsl(40, 50%, 20%);
+
+$error: hsl(0, 85%, 60%);
+$error95: hsl(0, 80%, 95%);
+$error80: hsl(0, 80%, 80%);
+$error30: hsl(0, 80%, 30%);
+$smiley: hsl(50, 90%, 50%);
+$smiley60: hsl(50, 80%, 60%);
+$smiley70: hsl(50, 80%, 70%);
+$smiley30: hsl(50, 80%, 30%);
+$success: hsl(120, 85%, 40%);
+$success95: hsl(120, 80%, 95%);
+$success80: hsl(120, 80%, 60%);
+$success30: hsl(120, 80%, 30%);
+$facebook: #3b5998;
+$linkedin: #0077b5;
+$youtube: #cc181e;
+$email: #f2a60c;
+
+@mixin transition{
+  transition: all 0.1s ease-in-out;
+}
+@mixin center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin vertical{
+  display: flex;
+  flex-direction: column;
+}
+@mixin shadow{
+  box-shadow: 0 0 3px $gray50;
+}
+
+@mixin select {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+cursor: pointer;
+}
+
+@mixin dropdown{
+  @include shadow;
+  position: absolute;
+  color: gray;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+  background: #f2f2f2;
+  span{
+    &:hover{
+      background: $gray98;
+    }
+  }
+}
+@mixin ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+@mixin no-scrollbar{
+  &::-webkit-scrollbar{
+    width: 0px;
+  }
+  &::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+  }
+}
+
+// old
+@mixin defaultTag{
+  background: 95;
+  color: $primary;
+}
+@mixin no-scrollbar {
+  &::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+  }
+}
+@mixin defaultButton{
+  @include defaultTag;
+  @include no-select;
+  &:hover{
+    color: white;
+    background: $primary;
+  }
+  &.active{
+    background: 25;
+    color: $primary;
+  }
+}

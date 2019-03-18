@@ -1,0 +1,225 @@
+@import '../styles/variables.scss';
+@import '../styles/reset.scss';
+body {
+  background-color: $primary90;
+}
+#page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+  align-items: center;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+  span {
+    @include select;
+    @include shadow;
+    @include center;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 60px;
+    transition: 0.1s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
+h1 {
+  @include center;
+  background-color: $primary80;
+  color: $primary30;
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+}
+h2 {
+  @include center;
+  width: 200px;
+  height: 40px;
+  background: white;
+  span {
+    margin-left: 5px;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+}
+.popup {
+  @include center;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  .content {
+    @include center;
+    padding: 20px 20px 0 20px;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    h3 {
+      font-weight: bold;
+    }
+    & > * {
+      margin-bottom: 20px;
+    }
+    span {
+      @include center;
+      @include select;
+      border-radius: 15px;
+      height: 30px;
+      padding: 0 10px;
+      border: 1px solid $primary;
+      transition: 0.1s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+p {
+  text-align: center;
+  color: $primary30;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.container {
+  @include center;
+  flex-wrap: wrap;
+  width: auto;
+  max-width: 800px;
+  height: 100%;
+  margin: 40px;
+  padding: 40px 0;
+  background-color: $primary70;
+}
+
+.button {
+  @include shadow;
+  @include center;
+  margin: 10px;
+  padding: 20px;
+  height: 40px;
+  background-color: white;
+  color: $primary;
+  border: 2px solid $primary40;
+  transition: 0.1s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+.column {
+  flex-direction: column;
+  padding: 40px;
+}
+.game-page {
+  @include center;
+  flex-direction: column;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 80px);
+  max-width: calc(100vh - 200px);
+  margin: 40px 0;
+  border: 3px solid $primary;
+  background-color: white;
+}
+.row {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.square {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid $primary;
+}
+.point {
+  @include center;
+  width: 100%;
+  height: 100%;
+  color: $primary30;
+  font-weight: bold;
+  font-size: 20px;
+}
+.p2 {
+  background: $primary90;
+}
+.p4 {
+  background: $primary85;
+}
+.p8 {
+  background: $primary80;
+}
+.p16 {
+  background: $primary75;
+}
+.p32 {
+  background: $primary70;
+}
+.p64 {
+  background: $primary65;
+}
+.p128 {
+  background: $primary65;
+}
+.p256 {
+  background: $primary60;
+}
+.p512 {
+  background: $primary55;
+}
+.p1024 {
+  background: $primary;
+}
+.p2048 {
+  background: $primary45;
+}
+.size-item {
+  width: 200px;
+}
+@media screen and (max-width: 860px) {
+  .game-page {
+    h1 {
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+    nav {
+      top: 0;
+      right: 0;
+      flex-direction: row;
+      height: 50px;
+      span {
+        font-size: 16px;
+        box-shadow: 0 0 0;
+        background-color: transparent;
+        height: 50px;
+        padding: 0 10px;
+        width: auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .game-page {
+    h1 {
+      color: $primary80;
+    }
+  }
+}
