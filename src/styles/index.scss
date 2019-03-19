@@ -9,6 +9,13 @@ body {
   height: 100%;
   overflow: scroll;
   align-items: center;
+  &::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+  }
 }
 ul {
   margin-bottom: 20px;
